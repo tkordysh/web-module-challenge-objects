@@ -53,10 +53,18 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(person){
+    if (person === 'teacher' || person === 'student') {
+      return this.price * 0.75;
+    } else if (person === 'public'){
+      return this.price * 0.90;
+    } else {
+      return 'Error: enter valid person';
+    }
+  }
 }
 
-
+console.log(burger.discount('public'));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
